@@ -13,14 +13,14 @@
   --gray-blue-800: #090E12;
 
   --green-400: #0F895D;
-  --green-700: #106446;
+  --green-700: #0D7A35;
 
   --green: #106446;
 
   --red-400: #CA222C;
  
   --yellow-500: #BB8110;
-  --yellow-700 :#997226;
+  --yellow-700: #997226;
 
   --size-tn: 08px;
   --size-sm: 12px;
@@ -49,21 +49,21 @@ code {
 
 h1,h2,h3,h4,h5,h6 {
   font-size: unset;
+  font-weight: unset;
 }
 
 body {
   padding: var(--size-sm);
   background: var(--gray-200);
-  color: var(--text); 
 
   --bg1: var(--gray-200);
   --bg2: var(--gray-300);
 
-  --accent-positive: var(--green-400);
+
+  --text: var(--gray-blue-800);
+  --accent-positive: var(--green-700);
   --accent-negative: var(--red-400);
   --accent-warn: var(--yellow-700);
-
-  --text: var(--gray-blue-400);
 }
 
 body.dark {
@@ -71,11 +71,16 @@ body.dark {
 
   --bg1: var(--gray-blue-800);
   --bg2: var(--gray-blue-700);
+  --text: var(--gray-blue-400);
+
+  --accent-positive: var(--green-400);
+  --accent-negative: var(--red-400);
+  --accent-warn: var(--yellow-700);
 
 }
 
 
-// sizes 
+/* // sizes  */
 
 .w-full {
   width: 100%;
@@ -91,7 +96,7 @@ body.dark {
   align-items:center; 
 }
 
-// Display modes
+/* // Display modes */
 
 .flex-row {
   display: flex;
@@ -101,6 +106,10 @@ body.dark {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.block {
+  display: block;
 }
 
 .grid-2 {
@@ -123,7 +132,7 @@ body.dark {
   grid-template-columns: repeat(5, 1fr);
 }
 
-// Span 
+// Span //
 
 .row-2 {
   grid-row: 1 / span 2;
@@ -133,7 +142,7 @@ body.dark {
   grid-column: 1 / span 2;
 }
 
-// Gaps
+/* Gaps */
 
 .gap-1 {
   gap: var(--size-tn);
@@ -155,7 +164,7 @@ body.dark {
   gap: var(--size-xl);
 }
 
-// Padding
+/* Padding */
 
 .pad-1 {
   padding: var(--size-tn);
@@ -177,7 +186,7 @@ body.dark {
   padding: var(--size-xl);
 }
 
-// Elements
+/* Elements */
 
 .bg {
   background-color: var(--bg1);
@@ -187,7 +196,7 @@ body.dark {
   background-color: var(--bg2);
 }
 
-// Border Radius
+/* Border Radius */
 
 .rounded-1 {
   border-radius: var(--size-tn);
@@ -209,7 +218,7 @@ body.dark {
   border-radius: var(--size-xl);
 }
 
-// TEXT SIZES
+/* TEXT SIZES */
 
 .font-sm {
   font-size: var(--size-sm);
@@ -227,16 +236,40 @@ body.dark {
   font-size: var(--size-xl);
 }
 
-.font-xxl {
+.font-x2 {
   font-size: var(--size-x2);
 }
 
-.font-xxxl {
+.font-x3 {
   font-size: var(--size-x3);
 }
 
-.font-xxxxl {
+.font-x4 {
   font-size: var(--size-x4);
 }
 
-// TEXT COLORS
+/* TEXT COLORS */
+
+.text {
+  color: var(--text);
+}
+
+.text-positive {
+  color: var(--accent-positive);
+}
+
+.text-negative {
+  color: var(--accent-negative);
+}
+
+.text-warn {
+  color: var(--accent-warn);
+}
+
+.no-border {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}

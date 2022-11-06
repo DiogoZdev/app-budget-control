@@ -3,7 +3,8 @@ import { CurrencyDollarSimple, GithubLogo, Lightbulb, Money, PaintRoller, Receip
 import { useEffect, useState } from 'react'
 import './App.css'
 import Button from './components/Button';
-import CardData from './components/Card-data';
+import Card from './components/Card';
+import ValueData from './components/ValueData';
 import { MonthDTO } from './types/monthDTO';
 
 export default function App() {
@@ -58,24 +59,31 @@ export default function App() {
       <div className='h-full grid-2 gap-3'>
       <div className="card text rounded-2 pad-3 h-full col-2">Gráfico</div>
         
-        <CardData
-          title="Entradas"
-          value={incomes}
-          color="text-positive"
-        ><Money size={26}/></CardData>
+        <Card>
+          <ValueData
+            title='Entradas'
+            color='text-positive'
+            value={incomes}
+          >
+            <Money size={22}/>
+          </ValueData>
+        </Card>
         
-        <CardData
-          title="Despesas"
-          value={expenses}
-          color="text-negative"
-        ><Receipt size={26}/></CardData>
+        <Card>
+          <ValueData
+            title='Saídas'
+            color='text-negative'
+            value={expenses}
+          >
+            <Receipt size={22}/>
+          </ValueData>
+        </Card>
 
       </div>
       <div className='flex-col gap-2'>
         <h1 className='text center font-xl'>Money Matters</h1>
         <div className='grid-3 gap-2'>
-          <Button action={switchTheme}
-          ><Lightbulb size={24}/></Button>
+          <Button action={switchTheme}><Lightbulb size={24}/></Button>
 
           <Button></Button>
 

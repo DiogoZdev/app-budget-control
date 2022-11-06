@@ -2,14 +2,15 @@ import axios from 'axios';
 import { CurrencyDollarSimple, GithubLogo, Lightbulb, Money, PaintRoller, Receipt } from 'phosphor-react';
 import { useEffect, useState } from 'react'
 import './App.css'
+import AdditionalInfo from './components/AdditionalInfo';
 import Button from './components/Button';
 import Card from './components/Card';
 import ValueData from './components/ValueData';
+import { ExpenseDTO } from './types/expenseDTO';
+import { IncomeDTO } from './types/incomeDTO';
 import { MonthDTO } from './types/monthDTO';
 
 export default function App() {
-
-  let theme: string = "";
 
   const [incomes, setIncomes] = useState<number>(0);
   const [expenses, setExpenses] = useState<number>(0);
@@ -17,6 +18,8 @@ export default function App() {
     month: 0,
     year: 0,
   })
+  const [incomesDetails, setIncomesDetails] = useState<IncomeDTO[]>([]);
+  const [expensesDetails, setExpensesDetails] = useState<ExpenseDTO[]>([]);
   
   // React On Init
   useEffect(() => {
@@ -89,10 +92,12 @@ export default function App() {
 
           <Button hint="Github" action={navigateGithub}><GithubLogo size={24}/></Button>
         </div>
-        <div className="card text rounded-2 pad-3 h-full row-2">
-          <h2>Resumo</h2>
-          <div>{ JSON.stringify(month) }</div>
-        </div>
+        <Card>
+          <AdditionalInfo
+            incomes={ month.incomes || []}
+            expenses={ month.expenses || []}
+          ></AdditionalInfo>
+        </Card>
       </div>
     </div>
   )
